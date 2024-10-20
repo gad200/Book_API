@@ -67,7 +67,7 @@ PUT	/api/books/{id}	Update a specific book
 DELETE	/api/books/{id}	Delete a specific book
 
 
-Testing
+##Testing
 1. Unit Tests with PHPUnit
 The project includes unit tests using PHPUnit for testing the repository and service layers. To run the tests:
 ```
@@ -83,7 +83,7 @@ docker-compose exec app php artisan migrate:fresh --seed
 ```
 
 
-Project Structure
+##Project Structure
 The project follows Repository and Service patterns for clean separation of concerns and testability.
 
 Repository: Handles database operations.
@@ -111,16 +111,16 @@ Controller: Handles HTTP requests and responses.
         └── BookRepositoryTest.php
 
 
-Docker
+##Docker
 This project includes a Dockerfile and docker-compose.yml for running the application in a Dockerized environment.
 
-Dockerfile
+##Dockerfile
 The Dockerfile sets up a PHP-FPM environment with the necessary PHP extensions and Composer.
 
-Docker Compose
+##Docker Compose
 The docker-compose.yml file sets up two services:
 
-app: Runs the Laravel application.
+##app: Runs the Laravel application.
 mysql: Runs the MySQL database.
 Troubleshooting
 If you encounter any issues with the Docker containers or migrations, try clearing the cache:
