@@ -1,0 +1,35 @@
+version: "3.8"
+
+services:
+    app:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        container_name: books_app
+        working_dir: /var/www
+        volumes:
+            - .:/var/www
+        ports:
+            - 9000:9000
+        networks:
+            - app-network
+
+    mysql:
+        image: mysql:5.7
+        container_name: books_mysql
+        environment:
+            MYSQL_ROOT_PASSWORD: root
+            MYSQL_DATABASE: books_db
+            MYSQL_USER: root
+            MYSQL_PASSWORD: root
+        volumes:
+            - db_data:/var/lib/mysql
+        networks:
+            - app-network
+
+networks:
+    app-network:
+        driver: bridge
+
+volumes:
+    db_data:
